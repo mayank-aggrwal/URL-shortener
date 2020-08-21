@@ -1,0 +1,6 @@
+POST http://localhost:5000/api/short
+Content-Type: application/json
+
+{
+    "longUrl": "https://www.amazon.com/pulgadas-Display-Graphics-retroiluminado-A515-43-R19L/dp/B07RF1XD36/ref=sr_1_1?dchild=1&fst=as%3Aoff&pf_rd_i=16225007011&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=74069509-93ef-4a3c-8dca-a9e3fa773a64&pf_rd_r=BN22K1MDPE7GK29RK5EQ&pf_rd_s=merchandised-search-4&pf_rd_t=101&qid=1487012920&rnid=16225007011&s=computers-intl-ship&sr=1-1"
+}
