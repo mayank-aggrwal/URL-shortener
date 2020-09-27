@@ -11,4 +11,4 @@ There are 3 different requests currently available-
        "longUrl": "the-long-url-to-be-shortened",
        "code": "the-custom-code"
    }
-3) GET   /:code
+3) GET  /:code
