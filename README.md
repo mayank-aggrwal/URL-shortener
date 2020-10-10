@@ -112,3 +112,17 @@
 }
 ```
 ---
+
+## Instructions
+
+ - Clone the repository
+ - Install node from [official website](https://nodejs.org/en/download/)
+ - Install the dependencies for the project using below command
+   ```bash
+   npm install
+   ```
+ - To run the application locally
+   ```bash
+   npm run dev
+   ```
+ - In the browser goto : http://localhost:5000/health

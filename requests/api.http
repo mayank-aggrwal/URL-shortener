@@ -1,7 +1,22 @@
-POST https://shortt-ly.herokuapp.com/api/custom
+# POST https://shortt-ly.herokuapp.com/api/custom
+# Content-Type: application/json
+
+# {
+#     "longUrl": "https://www.amazon.com/dp/B086HyyuK",
+#     "urlCode": "resume"
+# }
+
+# POST http://localhost:5000/api/short
+# Content-Type: application/json
+
+# {
+#     "longUrl": "https://www.amazon.com/dp/B08J49NB1V/ref=sspa_dk_detail_4?psc=1&pd_rd_i=B08J49NB1V&pd_rd_w=5s3vj&pf_rd_p=7d37a48b-2b1a-4373-8c1a-bdcc5da66be9&pd_rd_wg=WXzTQ&pf_rd_r=C3SMMQY7TVM9TAMNSAJ6&pd_rd_r=5a3d3163-16e4-4ac9-9e81-6f8f3a7bfb2a&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzRkUxUFlJV0RDQThRJmVuY3J5cHRlZElkPUEwODM0OTkwRTc4MVlYU0FaWUhMJmVuY3J5cHRlZEFkSWQ9QTA1ODY3NTMzNkhMSzBJMUVGM0FBJndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="
+# }
+
+POST http://localhost:5000/api/custom
 Content-Type: application/json
 
 {
-    "longUrl": "https://drive.google.com/file/d/1Ewhuq6MFHF0e2mHfx9JIBDwANMQcICPP/view?usp=sharing",
-    "code": "resume"
+    "longUrl": "https://www.amazon.com/dp/B08J49NB1V/ref=sspa_dk_detail_4?psc=1&pd_rd_i=B08J49NB1V&pd_rd_w=5s3vj&pf_rd_p=7d37a48b",
+    "urlCode": "resume"
 }

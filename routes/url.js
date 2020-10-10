@@ -14,7 +14,11 @@ router.post('/short', async (req, res) => {
     const baseUrl = config.get('baseUrl');
 
     if(!validUrl.isUri(baseUrl)) {
-        return res.status(401).json(`Invalid base URL`);
+        // return res.status(401).json(`Invalid base URL`);
+        const errors = {
+            message: 'Invalid base URL'
+        }
+        return res.status(400).json({ errors });
     }
 
     // Create URL short code
@@ -42,12 +46,21 @@ router.post('/short', async (req, res) => {
         }
         catch (err) {
             console.log(err);
-            res.status(500).json(`Server error`);
+            // res.status(500).json(`Server error`);
+            const errors = {
+                message: 'Server error'
+            }
+            res.status(500).json({ errors });
         }
     }
     else {
+        // console.log(`Invalid long URL`);
+        // res.status(401).json('Invalid long URL');
         console.log(`Invalid long URL`);
-        res.status(401).json('Invalid long URL');
+        const errors = {
+            message: 'Invalid long URL'
+        }
+        res.status(400).json({ errors });
     }
 });
 
@@ -56,11 +69,11 @@ router.post('/short', async (req, res) => {
 // @desc         Create custom short URL
 router.post('/custom', async (req, res) => {
     const longUrl = req.body.longUrl;
-    const customCode = req.body.code;
+    const customCode = req.body.urlCode;
     const baseUrl = config.get('baseUrl');
 
     if(!validUrl.isUri(baseUrl)) {
-        return res.status(401).json(`Invalid base URL`);
+        return res.status(400).json(`Invalid base URL`);
     }
 
     // Check long URL
@@ -74,7 +87,11 @@ router.post('/custom', async (req, res) => {
             else {
                 let code = await Url.findOne({ urlCode: customCode });
                 if(code) {
-                    res.status(401).json(`Code already in use`);
+                    // res.status(401).json(`Code already in use`);
+                    const errors = {
+                        message: 'Code already in use'
+                    }
+                    res.status(400).json({ errors });
                 }
                 else {
                     const shortUrl = baseUrl + '/' + customCode;
@@ -91,12 +108,20 @@ router.post('/custom', async (req, res) => {
         }
         catch (err) {
             console.log(err);
-            res.status(500).json(`Server error`);
+            // res.status(500).json(`Server error`);
+            const errors = {
+                message: 'Server error'
+            }
+            res.status(500).json({ errors });
         }
     }
     else {
         console.log(`Invalid long URL`);
-        res.status(401).json('Invalid long URL');
+        // res.status(401).json('Invalid long URL');
+        const errors = {
+            message: 'Invalid long URL'
+        }
+        res.status(400).json({ errors });        
     }
 });
 
